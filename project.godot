@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="GlitchPad"
+run/main_scene="uid://dsbccfynojfe"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=3
+window/size/resizable=false
+window/size/borderless=true
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true
 
 [editor]
 
