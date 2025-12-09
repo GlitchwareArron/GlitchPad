@@ -1,0 +1,10 @@
+settings:
+  main:
+    close_after_launch: true
+theme:
+  background:
+    transparent: true
+entries:
+  konsole:
+    target: "konsole"
+  
