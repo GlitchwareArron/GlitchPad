@@ -3,10 +3,14 @@ class_name GlitchPad
 
 @onready var config = $Config
 @onready var main_screen = $MainScreen
+@onready var theme = $Theme
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	theme.config = config
+	theme.main_screen = main_screen
 	config.load_config()
+	theme.set_theme()
 	load_entries()
 	pass # Replace with function body.
 
