@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnk56qyn1kq6j"]
+
+[ext_resource type="Script" uid="uid://bidwkbkvent00" path="res://entry.gd" id="1_rixl5"]
+
+[node name="Entry" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Entry"
+script = ExtResource("1_rixl5")
