@@ -3,6 +3,7 @@ class_name MainScreen
 
 @onready var entry_template:PackedScene = preload("res://components/entry.tscn")
 @onready var background = $Background
+@onready var glitchpad:GlitchPad = self.get_parent()
 var launch_timer:Timer
 var close_timer:Timer
 # Called when the node enters the scene tree for the first time.
@@ -14,13 +15,10 @@ func launch(target:String,arguments:Array = []) -> void:
 	print(_pid)
 	return
 	
-func close() -> void:
-	return
-	
 func load_entry(target_name:String,target_path:String) -> void:
 	var _entry:Entry = entry_template.instantiate()
 	_entry.text = target_name
 	_entry.target = target_path
-	_entry.launch.connect(launch)
+	_entry.launch.connect(glitchpad.launch)
 	add_child(_entry)
 	return
