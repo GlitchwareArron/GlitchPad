@@ -26,3 +26,12 @@ func delete_user_config() -> void:
 	OS.move_to_trash(user_config_path_absolute)
 	return
 	
+func update_settings(new_settings:Dictionary) -> void:
+	if new_settings.has("background_color"):
+		config["theme"]["background"]["color"] = new_settings["background_color"]
+	print(config)
+	apply_settings()
+	return
+
+func apply_settings() -> void:
+	return

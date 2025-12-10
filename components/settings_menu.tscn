@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3vfiu6j16q65"]
+[gd_scene load_steps=3 format=3 uid="uid://b3vfiu6j16q65"]
 
 [ext_resource type="Script" uid="uid://105c8qh2ltul" path="res://components/settings_menu.gd" id="1_pcytk"]
+[ext_resource type="PackedScene" uid="uid://bju5s6qbpy0tw" path="res://components/color_panel.tscn" id="2_0m5qg"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -18,3 +19,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 300
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackgroundButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Background"
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tabs_visible = false
+deselect_enabled = true
+
+[node name="Background" type="BoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ColorPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/TabContainer/Background" instance=ExtResource("2_0m5qg")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Apply" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Apply Changes"
+
+[node name="Cancel" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel Changes"

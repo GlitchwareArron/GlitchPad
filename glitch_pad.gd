@@ -20,6 +20,8 @@ func _ready() -> void:
 	close_timer.timeout.connect(close_glitchpad)
 	launcher_button.pressed.connect(focus_launcher)
 	settings_button.pressed.connect(focus_settings)
+	settings_menu.settings_confirmed.connect(config.update_settings)
+	settings_menu.settings_updated.connect(theme.set_theme)
 	pass # Replace with function body.
 
 func load_entries() -> void:
