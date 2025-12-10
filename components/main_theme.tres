@@ -1,3 +1,28 @@
-[gd_resource type="Theme" format=3 uid="uid://c0tucve87f4n5"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c0tucve87f4n5"]
+
+[ext_resource type="FontFile" uid="uid://bat7bkr7jjs3x" path="res://fonts/Terminal F4.ttf" id="1_n5ryw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4yr1"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.47395086, 1, 0.49698997, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0shc"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.13725491, 1, 0.28235295, 1)
 
 [resource]
+Button/colors/font_color = Color(0.13725491, 1, 0.28235295, 1)
+Button/colors/font_focus_color = Color(0.47395086, 1, 0.49698997, 1)
+Button/colors/font_hover_color = Color(0.47395086, 1, 0.49698997, 1)
+Button/colors/icon_normal_color = Color(0.13725491, 1, 0.28235295, 1)
+Button/fonts/font = ExtResource("1_n5ryw")
+Button/styles/hover = SubResource("StyleBoxFlat_r4yr1")
+Button/styles/normal = SubResource("StyleBoxFlat_l0shc")

@@ -14,3 +14,10 @@ script = ExtResource("1_sximq")
 
 [node name="Theme" type="Node" parent="."]
 script = ExtResource("4_u782i")
+
+[node name="LaunchTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CloseTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true

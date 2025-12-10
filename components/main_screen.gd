@@ -3,6 +3,8 @@ class_name MainScreen
 
 @onready var entry_template:PackedScene = preload("res://components/entry.tscn")
 @onready var background = $Background
+var launch_timer:Timer
+var close_timer:Timer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

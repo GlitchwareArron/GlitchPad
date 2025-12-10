@@ -4,6 +4,8 @@ class_name GlitchPad
 @onready var config = $Config
 @onready var main_screen = $MainScreen
 @onready var theme = $Theme
+@onready var launch_timer = $LaunchTimer
+@onready var close_timer = $CloseTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
