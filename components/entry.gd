@@ -10,5 +10,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func trigger() -> void:
+	release_focus()
 	launch.emit(target)
 	return
