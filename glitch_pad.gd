@@ -24,22 +24,27 @@ func load_entries() -> void:
 		main_screen.load_entry(_keys[_i],_entries[_keys[_i]]['target'])
 	return
 	
-func start_launch(target:String,arguments:Array) -> void:
-	#launch_timer.start()
-	#print("Waiting for " + str(launch_timer.wait_time) + " seconds")
-	#await launch_timer.timeout
+func start_launch(target:String,arguments:Array = []) -> void:
+	print("Starting Launch: " + target)
+	launch_timer.start()
+	print("Waiting for " + str(launch_timer.wait_time) + " seconds")
+	await launch_timer.timeout
 	launch(target,arguments)
 	pass
 
 func launch(target:String,arguments:Array = []) -> void:
-	print("Launch: " + target)
+	print("Launching: " + target)
 	var _pid = OS.create_process(target,arguments,false)
 	print(_pid)
-	#if config.config['main']['close_after_launch']:
+	if config.config["settings"]["main"]["close_after_launch"]:
+		print("Close starting in " + str(close_timer.wait_time))
 	close_timer.start()
 	return
 
 func close_glitchpad() -> void:
+	if config.config["settings"]["main"]["debug"]:
+		print("Debug enabled, deleting user config at " + config.user_config_path_absolute)
+		config.delete_user_config()
 	print("Closing now")
 	# Case for pending changes
 	get_tree().quit()

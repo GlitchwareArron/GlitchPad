@@ -19,6 +19,6 @@ func load_entry(target_name:String,target_path:String) -> void:
 	var _entry:Entry = entry_template.instantiate()
 	_entry.text = target_name
 	_entry.target = target_path
-	_entry.launch.connect(glitchpad.launch)
+	_entry.launch.connect(glitchpad.start_launch)
 	add_child(_entry)
 	return

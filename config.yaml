@@ -1,5 +1,6 @@
 settings:
   main:
+    debug: true
     close_after_launch: true
 theme:
   background:
