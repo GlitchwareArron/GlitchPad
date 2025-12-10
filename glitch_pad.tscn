@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5xdu2ub8esh4"]
+[gd_scene load_steps=7 format=3 uid="uid://c5xdu2ub8esh4"]
 
 [ext_resource type="Script" uid="uid://bj7wvsiimhclf" path="res://glitch_pad.gd" id="1_sximq"]
 [ext_resource type="PackedScene" uid="uid://kgjl4oco0er5" path="res://components/config.tscn" id="1_xp82x"]
 [ext_resource type="PackedScene" uid="uid://dsbccfynojfe" path="res://components/main_screen.tscn" id="2_sximq"]
 [ext_resource type="Script" uid="uid://btmxcmsjoskn5" path="res://theme.gd" id="4_u782i"]
+[ext_resource type="PackedScene" uid="uid://b3vfiu6j16q65" path="res://components/settings_menu.tscn" id="5_e1ke2"]
+[ext_resource type="Theme" uid="uid://c0tucve87f4n5" path="res://components/main_theme.tres" id="6_goalu"]
 
 [node name="GlitchPad" type="Node"]
 script = ExtResource("1_sximq")
@@ -21,3 +23,27 @@ one_shot = true
 [node name="CloseTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="SettingsMenu" parent="." instance=ExtResource("5_e1ke2")]
+visible = false
+
+[node name="TopMenu" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.5
+offset_right = 77.5
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_goalu")
+
+[node name="Launcher" type="Button" parent="TopMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Launcher"
+
+[node name="Settings" type="Button" parent="TopMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings"

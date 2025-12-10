@@ -3,9 +3,12 @@ class_name GlitchPad
 
 @onready var config = $Config
 @onready var main_screen = $MainScreen
+@onready var settings_menu = $SettingsMenu
 @onready var theme = $Theme
 @onready var launch_timer = $LaunchTimer
 @onready var close_timer = $CloseTimer
+@onready var launcher_button = $TopMenu/Launcher
+@onready var settings_button = $TopMenu/Settings
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +18,8 @@ func _ready() -> void:
 	theme.set_theme()
 	load_entries()
 	close_timer.timeout.connect(close_glitchpad)
+	launcher_button.pressed.connect(focus_launcher)
+	settings_button.pressed.connect(focus_settings)
 	pass # Replace with function body.
 
 func load_entries() -> void:
@@ -49,3 +54,11 @@ func close_glitchpad() -> void:
 	# Case for pending changes
 	get_tree().quit()
 	return
+
+func focus_launcher() -> void:
+	main_screen.visible = true
+	settings_menu.visible = false
+
+func focus_settings() -> void:
+	main_screen.visible = false
+	settings_menu.visible = true

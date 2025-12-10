@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ik0e08pdce3v"]
+
+[ext_resource type="Script" uid="uid://dq4rjyedtab62" path="res://components/top_menu.gd" id="1_sp71v"]
+
+[node name="TopMenu" type="HBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.5
+offset_right = 77.5
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+script = ExtResource("1_sp71v")
+
+[node name="Launcher" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Launcher"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings"

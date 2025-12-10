@@ -22,8 +22,6 @@ border_color = Color(0.13725491, 1, 0.28235295, 1)
 bg_color = Color(0.4745098, 1, 0.49803922, 0)
 border_width_left = 2
 border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
 border_color = Color(5.7756904e-07, 0.77136475, 0.18481213, 1)
 
 [resource]
